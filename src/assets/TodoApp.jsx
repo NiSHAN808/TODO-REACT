@@ -10,12 +10,27 @@ let [tasks,setTask]=useState([
 ]);
 
 function handleAddBtn(){
-    console.log(inputref.current.value);
+    
     let x= inputref.current.value;
     let newtask={tak:x, status:true};
     setTask(t=>[...t,newtask]);
     inputref.current.value="";
 }
+function handleDelBtn(i){
+    let x=0;
+    setTask(tasks.filter((_,index)=>i!==index ));
+   
+}
+function handleStatusChange(i){
+  const updatedTasks = tasks.map((task, index) => 
+    index === i ? { ...task, status: !task.status } : task
+  );
+  setTask(updatedTasks);
+} 
+
+     
+ 
+
 useEffect(()=>{
 console.log("re render");
 })
@@ -31,8 +46,8 @@ console.log("re render");
 
                     {tasks.map((task,index) => (
                         <li key={index} style={task.status? {color:"green"}:{color:"red", textDecoration: "line-through"}}>
-                           <span> {task.tak}</span>
-                           <span>{task.status ? ("pending" ): "done"}
+                           <span onClick={()=>handleDelBtn(index)}> {task.tak}</span>
+                           <span onClick={()=>handleStatusChange(index)}>{task.status ? ("pending" ): "done"}
                            </span> 
                             </li>
                             ))}
