@@ -1,0 +1,42 @@
+
+.todo-app{
+border: solid 2px black;
+border-radius: 2em;
+max-width: 40em;
+}
+.todo-app h1{
+    font-family: monospace; text-align: center;
+    font-size: 50px;
+}
+.input-area{
+
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.input-area input{
+    background-color: rgb(173, 173, 173);
+    border: none;
+    border-radius: 2em;
+    height: 3em;
+    width: 25em;
+}
+.input-area button{
+    background-color: blue;
+    color: white;
+    height: 3em;
+    width: 6em;
+    border-radius: 1em;
+    transition: background-color 0.5s ;
+    
+}
+ button :hover{
+    background-color: rgb(24, 142, 95);
+}
+.task-list ul{
+    list-style-type: none;
+    font-size: 30px;
+}
