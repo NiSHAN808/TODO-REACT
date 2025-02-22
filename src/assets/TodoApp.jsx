@@ -21,7 +21,7 @@ function handleAddBtn(){
                 <ul>
 
                     {tasks.map((task,index) => (
-                        <li key={index} style={task.status? {color:"green"}:{color:"red", background:"blue"}}>
+                        <li key={index} style={task.status? {color:"green"}:{color:"red", textDecoration: "line-through"}}>
                             {task.tak} STATUS : {task.status ? ("remenaning" ): "done"}
                             </li>
                             ))}
