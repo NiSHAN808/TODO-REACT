@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import './TodoApp.css';
+import dustbeen from './dustbeen.webp';
 function TodoApp() {
     let inputref = useRef(null);
 
     let [tasks, setTask] = useState([
-        { tak: "apple", status: true },
-        { tak: "banana", status: false },
-        { tak: "mango", status: true }
+        { tak: "Workout", status: true },
+        { tak: "Read book", status: true },
+        { tak: "Eat healthy", status: true }
     ]);
 
     function handleAddBtn() {
@@ -46,13 +47,13 @@ function TodoApp() {
                 <ul>
 
                     {tasks.map((task, index) => (
-                        <li className="list" key={index} style={task.status ? { color: "green" } : { color: "red", textDecoration: "line-through" }}>
-                            <span >
-                                <span className="status-box"onClick={() => handleStatusChange(index)}></span> 
-                                <span >  {task.tak}
+                        <li className="list" key={index}>
+                            <span className="parent-of-status-and-task">
+                                <span className="status-box" onClick={() => handleStatusChange(index)}>{task.status ? "" : ("✓")}</span>
+                                <span style={task.status ? {} : { textDecoration: "line-through" }} >  {task.tak}
                                 </span>
-                                </span>
-                            <span onClick={() => handleDelBtn(index)} >{task.status ? ("X") : "X"}
+                            </span>
+                            <span className="delete-box" onClick={() => handleDelBtn(index)} ><img src={dustbeen} />
                             </span>
                         </li>
                     ))}

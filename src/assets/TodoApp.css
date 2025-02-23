@@ -11,6 +11,7 @@
 border: solid 2px black;
 border-radius: 2em;
 max-width: 40em;
+padding: 0.3em;
 }
 .todo-app h1{
     font-family: monospace; text-align: center;
@@ -54,13 +55,18 @@ max-width: 40em;
 .task-list li{
     background-color: var(--dark1);
     margin: 5px;
- 
-
     border-radius: 2em;
     padding: 0.5em 1em;
     display: flex;
     justify-content:space-between;
-    margin-left: -px;
+    align-items: center;
+   
+    color: white;
+}
+.parent-of-status-and-task{
+    display: inline-flex;
+    align-items: center;
+    
 }
 .status-box{
     display: inline-block;
@@ -68,4 +74,15 @@ max-width: 40em;
     width: 1em;
     border-radius: 50%;
     background-color: var(--bright1);
+}
+.delete-box{
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    border-radius: 0.2em;
+    background-color: var(--bright1);
+}
+.delete-box img{
+    
+    height: 100%;
 }
