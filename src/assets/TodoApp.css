@@ -6,16 +6,24 @@
     --darkest: #2A004E;
     
   }
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
 .todo-app{
     background-color: var(--dark2);
 border: solid 2px black;
-border-radius: 2em;
-max-width: 40em;
-padding: 0.3em;
+border-radius: 2rem;
+max-width: 50rem;
+padding: 0.3rem;
 }
 .todo-app h1{
-    font-family: monospace; text-align: center;
-    font-size: 50px;
+    font-family: monospace; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9rem;
+    font-size: 5rem;
     color: var(--bright1);
 }
 .input-area{
@@ -30,17 +38,19 @@ padding: 0.3em;
 .input-area input{
     background-color: var(--bright2);
     border: none;
-    border-radius: 2em;
-    height: 3em;
-    width: 25em;
+    border-radius: 2rem;
+    height: 4rem;
+    width: 28rem;
+    color: white;
+    padding-left: 1rem;
 }
 .input-area button{
     background-color: var(--bright2);
     border: none;
     color: white;
-    height: 3em;
-    width: 6em;
-    border-radius: 1em;
+    height: 4rem;
+    width: 6rem;
+    border-radius: 1rem;
     transition: background-color 0.5s ease ;
     
 }
@@ -49,14 +59,14 @@ padding: 0.3em;
 }
 .task-list ul{
     list-style-type:symbols(X);
-    font-size: 30px;
+    font-size: 3rem;
     display: contents;
 }
 .task-list li{
     background-color: var(--dark1);
-    margin: 5px;
-    border-radius: 2em;
-    padding: 0.5em 1em;
+    margin: 0.7rem;
+    border-radius: 2rem;
+    padding: 1.2rem 1.8rem;
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -70,19 +80,42 @@ padding: 0.3em;
 }
 .status-box{
     display: inline-block;
-    height: 1em;
-    width: 1em;
+    height: 2.8rem;
+    width: 2.8rem;
     border-radius: 50%;
     background-color: var(--bright1);
+    cursor: pointer;
 }
 .delete-box{
     display: inline-block;
-    height: 1em;
-    width: 1em;
-    border-radius: 0.2em;
+    height: 2.8rem;
+    width: 2.8rem;
+    border-radius: 0.8rem;
     background-color: var(--bright1);
+    overflow: hidden;
 }
 .delete-box img{
     
     height: 100%;
-}
+}    
+
+
+
+ @media only screen and (max-width: 500px) {
+    .todo-app{
+        background-color: var(--dark2);
+   
+    border-radius: 0px;
+    width: 100vw;
+    height: 100vh;
+    padding: 0.3rem;
+    }
+
+    .task-list li{
+        
+        margin: 1rem;
+        border-radius: 2rem;
+        padding: 1.2rem 1.8rem;
+    }
+  
+    }   
