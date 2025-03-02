@@ -14,7 +14,7 @@
     background-color: var(--dark2);
 border: solid 2px black;
 border-radius: 2rem;
-max-width: 50rem;
+width: 50rem;
 padding: 0.3rem;
 }
 .todo-app h1{
@@ -118,4 +118,26 @@ padding: 0.3rem;
         padding: 1.2rem 1.8rem;
     }
   
-    }   
+    }         @media only screen and (max-width: 300px) {
+        .task-list ul{
+           
+            font-size: 2rem;
+           
+        }
+        .input-area input{
+            height: 16vw;
+            width: 70vw;
+        }
+        .input-area button{
+            height: 16vw;
+            font-size: 6vw;
+            width: 15vw;
+            
+        }
+        .todo-app h1{
+         
+    
+            font-size: 16vw;
+
+        }
+     }
