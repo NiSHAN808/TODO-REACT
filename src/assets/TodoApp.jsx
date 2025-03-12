@@ -1,14 +1,29 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import './TodoApp.css';
 import dustbeen from './dustbeen.webp';
 function TodoApp() {
     let inputref = useRef(null);
+    let [tasks, setTask] = useState([{ tak: "Exercise", status: "true" }]);
+    let ls = useRef(JSON.parse(localStorage.getItem("tasks")));
 
-    let [tasks, setTask] = useState([
-        { tak: "Workout", status: true },
-        { tak: "Read book", status: true },
-        { tak: "Eat healthy", status: true }
-    ]);
+
+
+
+
+    useEffect(() => {
+        if (ls.current != null) {
+            setTask(ls.current);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, [tasks]);
+
+
+
+
 
     function handleAddBtn() {
 
@@ -32,9 +47,7 @@ function TodoApp() {
 
 
 
-    useEffect(() => {
-        console.log("re render");
-    })
+
 
     return (<>
         <div className="todo-app">
@@ -56,7 +69,8 @@ function TodoApp() {
                             <span className="delete-box" onClick={() => handleDelBtn(index)} ><img src={dustbeen} />
                             </span>
                         </li>
-                    ))}
+                    ))
+                    }
                 </ul>
 
             </div>
